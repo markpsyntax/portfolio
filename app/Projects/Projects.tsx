@@ -31,8 +31,9 @@ const projects = [
       'Sass',
       'PostgreSQL',
       'Framer Motion',
+      'Stripe',
     ],
-    description: 'COMING SOON - Official site for my music project.',
+    description: 'COMING SOON - Official E-commerce site for my music project.',
     modalContent: (
       <>
         <p>
