@@ -1,5 +1,3 @@
-'use client';
-
 import { Reveal } from '@/components/utils/Reveal';
 import { useAnimation, useInView, motion } from 'framer-motion';
 import Link from 'next/link';
@@ -42,6 +40,18 @@ export const Project = ({
     }
   }, [isInView, controls]);
 
+  const renderLinkIcon = (href: string, icon: JSX.Element) => {
+    return (
+      <span
+        className={`${styles.iconWrapper} ${
+          href === '' ? styles.disabledLink : ''
+        }`}
+      >
+        {icon}
+      </span>
+    );
+  };
+
   return (
     <>
       <motion.div
@@ -74,14 +84,8 @@ export const Project = ({
             <div className={styles.projectTitle}>
               <h4>{title}</h4>
               <div className={styles.projectTitleLine} />
-
-              <Link href={code} target="_blank" rel="nofollow">
-                <AiFillGithub size="2.8rem" />
-              </Link>
-
-              <Link href={projectLink} target="_blank" rel="nofollow">
-                <AiOutlineExport size="2.8rem" />
-              </Link>
+              {renderLinkIcon(code, <AiFillGithub size="2.8rem" />)}
+              {renderLinkIcon(projectLink, <AiOutlineExport size="2.8rem" />)}
             </div>
           </Reveal>
           <Reveal>

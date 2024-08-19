@@ -46,19 +46,30 @@
     font-weight: bold;
     font-size: var(--text-md);
     flex-shrink: 0;
-
     max-width: calc(100% - 150px);
   }
 
-  a {
+  .iconWrapper {
     opacity: 0.75;
     transition: 0.25s opacity;
   }
 
-  a:hover {
+  .iconWrapper:not(.disabledLink):hover {
     opacity: 1;
+    cursor: pointer;
   }
+
+  .disabledLink {
+  opacity: 0.3;
+  cursor: not-allowed;
+  color: var(--text);
+  font-size: var(--text-xs);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
 }
+}
+
 
 .projectTitleLine {
   width: 100%;

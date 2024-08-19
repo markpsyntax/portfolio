@@ -52,6 +52,21 @@ export const ProjectModal = ({
     };
   }, [setIsOpen]);
 
+  const renderLink = (href: string, icon: JSX.Element, text: string) => {
+    if (href === '') {
+      return (
+        <span className={styles.disabledLink}>
+          {icon} {text}
+        </span>
+      );
+    }
+    return (
+      <Link target="_blank" rel="nofollow" href={href}>
+        {icon} {text}
+      </Link>
+    );
+  };
+
   const content = (
     <div className={styles.modal} onClick={() => setIsOpen(false)}>
       <button className={styles.closeModalBtn}>
@@ -82,12 +97,8 @@ export const ProjectModal = ({
               Project Links<span>.</span>
             </p>
             <div className={styles.links}>
-              <Link target="_blank" rel="nofollow" href={code}>
-                <AiFillGithub /> source code
-              </Link>
-              <Link target="_blank" rel="nofollow" href={projectLink}>
-                <AiOutlineExport /> live project
-              </Link>
+              {renderLink(code, <AiFillGithub />, 'source code')}
+              {renderLink(projectLink, <AiOutlineExport />, 'live project')}
             </div>
           </div>
         </div>
