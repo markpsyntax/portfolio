@@ -1,0 +1,48 @@
+.bottomNav {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .bottomNav {
+    width: 100vw;
+    display: flex;
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: var(--background-dark);
+    z-index: 20;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .navItem {
+    font-size: var(--text-sm);
+    opacity: 0.5;
+    transition: 0.1s all;
+    cursor: pointer;
+  }
+
+  .navItem:hover,
+  .navItem.selected {
+    opacity: 1;
+  }
+
+  .navIcon {
+    margin: auto;
+  }
+
+  .navName {
+    font-size: var(--text-xs);
+  }
+
+  .navName,
+  .navIcon {
+    display: flex;
+  }
+
+  .selected {
+    color: var(--brand);
+  }
+}

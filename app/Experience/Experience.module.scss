@@ -1,0 +1,65 @@
+.experience {
+  margin-bottom: 2.4rem;
+  padding: 0 1.2rem 2.4rem;
+  border-bottom: 1px solid var(--background-light);
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 1.2rem;
+}
+
+.title {
+  font-size: var(--text-md);
+  font-weight: bold;
+}
+
+.position {
+  color: var(--brand);
+  font-weight: bold;
+}
+
+.description {
+  margin-bottom: 1.8rem;
+  font-weight: 200;
+}
+
+.tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .experience {
+    width: 90vw;
+    margin: auto;
+    padding-top: 20px;
+  }
+
+  .heading {
+    flex-direction: row;
+    align-items: center;
+    font-size: var(--text-sm);
+  }
+
+  .tech {
+    justify-content: flex-start;
+  }
+
+  .title {
+    font-size: var(--text-sm);
+  }
+
+  .position,
+  .description {
+    font-size: var(--text-xs);
+  }
+
+  .tech span.chip {
+    font-size: var(--text-xxs);
+  }
+}

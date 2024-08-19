@@ -1,0 +1,13 @@
+.Icon {
+  max-width: 70vw;
+  height: 50vh;
+  margin-bottom: -35vh;
+  overflow: hidden;
+  transform: translate(200px, -200px);
+}
+
+@media (max-width: 768px) {
+  .Icon {
+    display: none;
+  }
+}

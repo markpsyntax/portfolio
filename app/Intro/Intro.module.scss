@@ -1,0 +1,113 @@
+.intro {
+  .introContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.copyWrapper {
+  position: relative;
+  z-index: 10;
+
+  width: fit-content;
+  margin: 4.8rem 0 0 0;
+}
+
+.title {
+  font-size: var(--text-2xl);
+  font-weight: 900;
+  line-height: 1.1;
+
+  span {
+    color: var(--brand);
+  }
+}
+
+.subTitle {
+  font-size: var(--text-lg);
+  line-height: 1.1;
+  margin-top: 1.6rem;
+  font-weight: 200;
+
+  span {
+    font-weight: bold;
+    color: var(--brand);
+  }
+}
+
+.aboutCopy {
+  margin: 2.4rem 0;
+  max-width: 700px;
+  font-weight: 200;
+}
+
+.contactSVG {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-left: 10px;
+  display: inline;
+  transform: rotate(50deg);
+}
+
+.typing {
+  height: 35px;
+  white-space: nowrap;
+  font-family: 'Source Code Pro', monospace;
+  position: relative;
+  animation: animated-text 2s steps(36, end) 2s 1 normal both;
+}
+
+@keyframes animated-text {
+  from {
+    width: 0;
+  }
+  to {
+    width: 570px;
+  }
+}
+
+@media (max-width: 768px) {
+  .intro {
+    width: 100vw;
+    margin: 4.8rem 0;
+    padding-left: 2rem;
+  }
+
+  .copyWrapper {
+    margin: 2.4rem 1.2rem;
+    width: auto;
+  }
+
+  .title {
+    font-size: var(--text-lg);
+    margin-bottom: 0.8rem;
+  }
+
+  .subTitle {
+    font-size: var(--text-md);
+    margin-top: 0.5rem;
+  }
+
+  .aboutCopy,
+  .connect {
+    font-size: var(--text-xxs);
+    margin: 1.2rem 0;
+    max-width: 100%;
+  }
+
+  .contactSVG {
+    width: 0.8rem;
+    height: 1.2rem;
+  }
+
+  .typing {
+    margin: auto;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .dotGrid {
+    display: none;
+  }
+}

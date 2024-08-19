@@ -1,0 +1,21 @@
+.home {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+}
+
+.pageSpace {
+  height: 200px;
+  background: linear-gradient(180deg, var(--background), var(--background-dark));
+}
+
+@media (max-width: 768px) {
+  .home {
+    height: 100vh;
+    width: 100vw;
+    grid-template-columns: 1fr;
+  }
+
+  .pageSpace {
+    height: 50px;
+  }
+}
