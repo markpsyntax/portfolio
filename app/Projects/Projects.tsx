@@ -1,21 +1,52 @@
 import { SectionHeader } from '@/components/utils/SectionHeader';
 import { Project } from './Project';
 import styles from './Projects.module.scss';
-import { m } from 'framer-motion';
+import { useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 
 export const Projects = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const visibleProjects = isExpanded ? projects : projects.slice(0, 4);
+
   return (
     <section className="section-wrapper" id="projects">
       <SectionHeader title="Projects" dir="r" />
 
       <div className={styles.projects}>
-        {projects.map((project) => {
-          return <Project key={project.title} {...project} />;
-        })}
+        <AnimatePresence>
+          {visibleProjects.map((project) => (
+            <motion.div
+              key={project.title}
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 50 }}
+              transition={{ duration: 0.5 }}
+            >
+              <Project {...project} />
+            </motion.div>
+          ))}
+        </AnimatePresence>
       </div>
+
+      {!isExpanded && (
+        <motion.div
+          className={styles.viewMoreWrapper}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5 }}
+        >
+          <button
+            className={styles.viewMoreButton}
+            onClick={() => setIsExpanded(true)}
+          >
+            View More
+          </button>
+        </motion.div>
+      )}
     </section>
   );
 };
+
 
 const projects = [
   {
